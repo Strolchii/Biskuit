@@ -1,0 +1,15 @@
+
+#import "test";
+
+/*
+ * Entry point
+ * parameter: void
+
+*/
+main :: () {
+    return;
+}
+
+/*
+
+*/
