@@ -1,15 +1,92 @@
 
 #import "test";
 
-/*
- * Entry point
- * parameter: void
+GLOBAL :: 3;
+// Alias["GLOBAL", NumericValue[3], ""]
 
-*/
 main :: () {
+    x := 4;
+    {
+        y := 3;
+
+        x = 5;
+        x += 3;  // x = x + 3;
+        return;
+    }
     return;
 }
-
-/*
-
+/* Alias["main", Function[FunctionType[[], void], Block[
+    Definition["x", Numeric[4]],
+    Block[
+        Definition["y", Numeric[3]],
+        Assignment[Name["x"], Numeric[5]],
+        Assignment[Name["x"], Add[Name["x"], Numeric[3]]],
+        Return["void"]
+    ]
+    Return["void"]
+]]]
 */
+
+callback: (a: i32) -> i32;
+
+
+callback = (a: i32) -> i32 {
+    return a;
+}
+
+query :: (method: []u8, callback: (Result) -> Result) -> Result {
+    res: Result;
+    ...
+    return callback(res);
+}
+
+query("allUnderscores", (r: Result) -> Result {
+    return r;
+});
+
+x : i32 = 3;
+
+
+Matrix4f :: struct {
+    ...
+}
+
+__setitem__ :: (mat: Matrix4f, scalar: f32) {
+    ...
+}
+
+operator []= :: (obj: Obj, index: ComplexObj) {
+    ...
+}
+
+obj[ComplexObj.{"test", 1,2,3, [4]}];
+
+
+mat: Matrix4f;
+mat *= 3;
+
+compiler_output: enum u8 {
+    EXE :: 1;
+    DLL :: 2;
+    SRC :: 3;
+} = .EXE;
+
+compiler_output == .EXE;
+
+mat: Matrix4f = #typeof(mat).{1,2,3,4,5,67,6,...};
+
+mat := Matrix4f.{1,2,3,45};
+
+
+MyClassName :: struct {}
+MyEnum :: enum u8 {}
+
+calculateQuadTree :: () {}
+
+initial_value := 3;
+
+MISSING :: null;  // global
+
+MyEnum :: enum u8 {
+    Missing :: 0;  // enum local
+}

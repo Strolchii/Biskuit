@@ -91,6 +91,7 @@ class TokenType(Enum):
 
     Structure = auto()  # struct
     Enumeration = auto()  # enum
+    Operator = auto()  # operator
 
 
 class TokenTag(Enum):

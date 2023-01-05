@@ -37,6 +37,7 @@ class LexemeMaps:
         "not": TokenType.LogicNot,
         "struct": TokenType.Structure,
         "enum": TokenType.Enumeration,
+        "operator": TokenType.Operator,
     }
     Compiler = {
         "#import": TokenType.Import,
